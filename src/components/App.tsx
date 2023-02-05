@@ -4,6 +4,8 @@ import {
     QueryClient,
     QueryClientProvider,
 } from 'react-query'
+import CurrencyExchangePage from "./currency-exchange/CurrencyExchangePage"
+
 const Nav = (props: any) => (
     <Header
         background="brand"
@@ -21,6 +23,7 @@ function App() {
                 <Page>
                     <Nav />
                     <PageContent>
+                        <CurrencyExchangePage />
                     </PageContent>
                 </Page>
             </Grommet>
