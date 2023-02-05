@@ -22,9 +22,7 @@ const CardTemplate = ({ title, children, align="left" }: CardProps) => {
                 </CardHeader>
             )}
             <CardBody pad="medium" align={align}>
-                <Paragraph>
-                    {children}
-                </Paragraph>
+                {children}
             </CardBody>
         </Card>
     );
