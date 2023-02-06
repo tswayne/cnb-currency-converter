@@ -1,6 +1,6 @@
-import React, {useEffect, useMemo} from 'react'
+import React from "react"
 import {CnbExchangeResponse} from "lib/cnb-api-client"
-import {Box, Heading, Table, TableBody, TableCell, TableHeader, TableRow} from "grommet";
+import {Box, Table, TableBody, TableCell, TableHeader, TableRow} from "grommet"
 
 interface CurrencyExchangeTableProps {
     exchangeResponse: CnbExchangeResponse

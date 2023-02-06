@@ -1,16 +1,16 @@
-import React, {useMemo, useState} from 'react'
+import React, {useMemo, useState} from "react"
 import {Grid, PageHeader, Notification, Box, AccordionPanel, Accordion} from "grommet"
 import Card from "components/common/Card"
-import {CnbApiClient} from "lib/cnb-api-client"
-import CurrencyExchangeTable from './CurrencyExchangeTable'
-import CurrencyExchangeForm from './CurrencyExchangeForm'
-import {useQuery} from "react-query";
+import {CnbApiClient, CnbExchangeResponse} from "lib/cnb-api-client"
+import CurrencyExchangeTable from "./CurrencyExchangeTable"
+import CurrencyExchangeForm from "./CurrencyExchangeForm"
+import {useQuery} from "react-query"
 
 const CurrencyExchangePage: React.FC = () => {
     const cnbApiClient = useMemo(() => new CnbApiClient(), [])
-    const apiCacheKey = `exchange-rates-${new Date().getUTCDate()}`
     const [activePanel, setActivePanel] = useState<number | undefined>(0)
-    const { isError, data: exchangeResponse } = useQuery(apiCacheKey, cnbApiClient.getDailyExchangeRate)
+    const apiCacheKey = `exchange-rates-${new Date().getUTCDate()}`
+    const { isError, data: exchangeResponse } = useQuery<CnbExchangeResponse>(apiCacheKey, cnbApiClient.getDailyExchangeRate)
     const toggleActivePanel = () => activePanel === 0 ? setActivePanel(undefined) : setActivePanel(0)
     return (
         <Grid columns="large" gap="large" pad={{ bottom: "large" }} margin={{bottom: "large"}}>

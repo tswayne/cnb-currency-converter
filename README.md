@@ -4,6 +4,7 @@
 Application bootstrapped with:
 * Create React App w/ typescript ([docs](https://create-react-app.dev/docs/adding-typescript/#installation))
 * Styled Components, using [Grommet](https://v2.grommet.io/) as a quick-start component library (found through Styled Components [ecosystem page](https://styled-components.com/ecosystem))
+  * I had never used Grommet before, but wanted to use a component library in order to move a bit faster.  The developer experience is pretty nice, but the resulting DOM is a bit verbose.  Would need to spend a little more time with it to form an opinion.
 * Base Http Client (my [own package](https://github.com/tswayne/base-http-client-js)), for very simple http interactions
 * React Query
 

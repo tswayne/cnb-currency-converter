@@ -1,17 +1,14 @@
-import React from 'react'
-import {Grommet, Header, Page, PageContent, Text} from 'grommet'
-import {
-    QueryClient,
-    QueryClientProvider,
-} from 'react-query'
+import React from "react"
+import {Grommet, Header, Page, PageContent, Text} from "grommet"
+import {QueryClient, QueryClientProvider} from "react-query"
 import CurrencyExchangePage from "./currency-exchange/CurrencyExchangePage"
 
-const Nav = (props: any) => (
+const Nav = () => (
     <Header
+        sticky="scrollup"
         background="brand"
         pad={{ left: "medium", right: "small", vertical: "small" }}
         elevation="medium"
-        {...props}
      >
         <Text size="large">CZK Exchange</Text>
     </Header>
