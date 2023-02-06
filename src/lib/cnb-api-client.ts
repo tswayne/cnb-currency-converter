@@ -19,7 +19,7 @@ class CnbApiClient extends HttpClient {
     constructor() {
         super('http://localhost:4000'); // TODO would be to make the server endpoint configurable
     }
-    async getDailyExchangeRate(): Promise<any> {
+    async getDailyExchangeRate(): Promise<CnbExchangeResponse> {
         const path = '/en/financial-markets/foreign-exchange-market/central-bank-exchange-rate-fixing/central-bank-exchange-rate-fixing/daily.txt'
         const response = await this.get(path, {}, { headers: { 'Content-Type': 'text/plain' }})
         return this.parseResponse(response.body.trim())

@@ -16,4 +16,5 @@ Application bootstrapped with:
 * Requires node, safest version to use would be LTS (18)
 * Install dependencies with `yarn` (or `npm i`, version ranges in package.json should be safe)
 * Start the client and proxy server together with `npm start`
-* Go to `http://localhost:3000/`
+* Go to `http://localhost:3000/` (tested on Chrome)
+* Run tests with `npm test`

@@ -3,7 +3,6 @@ import {
     CardHeader,
     CardBody,
     Heading,
-    Paragraph,
 } from "grommet";
 
 interface CardProps {

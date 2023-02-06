@@ -28,10 +28,10 @@ const CurrencyExchangeForm: React.FC<CurrencyExchangeTableProps> = ({exchangeRes
             <Paragraph margin="none" size="small" fill>Enter an amount in CZK and select a currency, then click calculate to display the converted amount.</Paragraph>
             <Box width="medium">
                 <Paragraph><strong>Conversion</strong>: {convertedAmount}</Paragraph>
-                    <FormField name="name" htmlFor="text-input-id" label="CZK amount">
-                        <TextInput placeholder="CZK amount" type="number" name="czkAmount" onChange={({ target: { value }}) => setCzkAmount(parseInt(value))} value={czkAmount} />
+                    <FormField name="czkAmount" label="CZK amount">
+                        <TextInput data-testid="czkAmount" placeholder="CZK amount" type="number" name="czkAmount" onChange={({ target: { value }}) => setCzkAmount(parseInt(value))} value={czkAmount} />
                     </FormField>
-                    <FormField name="name" htmlFor="text-input-id" label="Convert to">
+                    <FormField name="currencyType" label="Convert to">
                         <Select
                             name="currencyType"
                             options={options}

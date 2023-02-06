@@ -6,6 +6,7 @@
       "dom.iterable",
       "esnext"
     ],
+    "exclude": ["./src/tests/*"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
