@@ -9,4 +9,8 @@ Application bootstrapped with:
 
 ## Callouts
 * The CNB website sets a specific CORS allowed origin (to `apl.cnb.cz`), which causes modern browsers to reject an api request directly to their domain.
-  To get around that, I have a simple proxy route to pass all requests to `cnb.cz` through.  **Note** The server implementation is very bare bones (i.e. a simple express server written in js) as it's simply a means to complete the exercise as instructed. 
+  To get around that, I have a simple proxy route to pass all requests to `cnb.cz` through.  **Note** The server implementation is very bare bones (i.e. a simple express server written in js) as it's simply a means to complete the exercise as instructed.
+
+## Running the application
+* Start the client and proxy server together with `npm start`
+* Go to `http://localhost:3000/`
