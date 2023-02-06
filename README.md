@@ -13,5 +13,7 @@ Application bootstrapped with:
   To get around that, I have a simple proxy route to pass all requests to `cnb.cz` through.  **Note** The server implementation is very bare bones (i.e. a simple express server written in js) as it's simply a means to complete the exercise as instructed.
 
 ## Running the application
+* Requires node, safest version to use would be LTS (18)
+* Install dependencies with `yarn` (or `npm i`, version ranges in package.json should be safe)
 * Start the client and proxy server together with `npm start`
 * Go to `http://localhost:3000/`
