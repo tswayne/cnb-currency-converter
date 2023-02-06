@@ -8,12 +8,13 @@ import {
 
 interface CardProps {
     title?: string,
+    cardProps?: object,
     align?: string,
     children: any
 }
-const CardTemplate = ({ title, children, align="left" }: CardProps) => {
+const CardTemplate = ({ title, children, align="left", cardProps={} }: CardProps) => {
     return (
-        <Card>
+        <Card {...cardProps}>
             {title && (
                 <CardHeader pad="medium">
                     <Heading level={2} margin="none">
