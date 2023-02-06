@@ -1,5 +1,5 @@
 import React, {useMemo, useState} from 'react'
-import {Grid, PageHeader, Notification, Box } from "grommet"
+import {Grid, PageHeader, Notification, Box, AccordionPanel, Accordion} from "grommet"
 import Card from "components/common/Card"
 import {CnbApiClient} from "lib/cnb-api-client"
 import CurrencyExchangeTable from './CurrencyExchangeTable'
@@ -9,7 +9,9 @@ import {useQuery} from "react-query";
 const CurrencyExchangePage: React.FC = () => {
     const cnbApiClient = useMemo(() => new CnbApiClient(), [])
     const apiCacheKey = `exchange-rates-${new Date().getUTCDate()}`
-    const { isLoading, isError, data: exchangeResponse, error } = useQuery(apiCacheKey, () => cnbApiClient.getDailyExchangeRate())
+    const [activePanel, setActivePanel] = useState<number | undefined>(0)
+    const { isError, data: exchangeResponse } = useQuery(apiCacheKey, cnbApiClient.getDailyExchangeRate)
+    const toggleActivePanel = () => activePanel === 0 ? setActivePanel(undefined) : setActivePanel(0)
     return (
         <Grid columns="large" gap="large" pad={{ bottom: "large" }} margin={{bottom: "large"}}>
             {isError && (
@@ -25,7 +27,11 @@ const CurrencyExchangePage: React.FC = () => {
             <Card cardProps={ {margin: {bottom: "large"} } }>
                 {exchangeResponse &&
                 <Box>
-                    <CurrencyExchangeTable exchangeResponse={exchangeResponse} />
+                    <Accordion activeIndex={activePanel} focusIndicator={false} onClick={toggleActivePanel}>
+                        <AccordionPanel label="Daily exchange rates"  >
+                            <CurrencyExchangeTable exchangeResponse={exchangeResponse} />
+                        </AccordionPanel>
+                    </Accordion>
                     <CurrencyExchangeForm exchangeResponse={exchangeResponse} />
                 </Box>}
             </Card>

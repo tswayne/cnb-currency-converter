@@ -9,7 +9,6 @@ const CurrencyExchangeTable: React.FC<CurrencyExchangeTableProps> = ({exchangeRe
 
     return (
         <Box>
-            <Heading level={4} margin="none">Daily exchange rate</Heading>
             <Table>
                 <TableHeader>
                     <TableRow>
