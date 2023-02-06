@@ -13,7 +13,7 @@ const Nav = (props: any) => (
         elevation="medium"
         {...props}
      >
-        <Text size="large">Sample app</Text>
+        <Text size="large">CZK Exchange</Text>
     </Header>
 )
 function App() {

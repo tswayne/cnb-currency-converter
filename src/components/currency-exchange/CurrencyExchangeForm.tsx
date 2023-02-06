@@ -27,7 +27,6 @@ const CurrencyExchangeForm: React.FC<CurrencyExchangeTableProps> = ({exchangeRes
             <Paragraph margin="none" size="small" fill>Enter an amount in CZK and select a currency, then click calculate to display the converted amount.</Paragraph>
             <Box width="medium">
                 <Paragraph><strong>Conversion</strong>: {convertedAmount}</Paragraph>
-                <Form onSubmit={(e) => e.preventDefault()}>
                     <FormField name="name" htmlFor="text-input-id" label="CZK amount">
                         <TextInput placeholder="CZK amount" type="number" name="czkAmount" onChange={({ target: { value }}) => setCzkAmount(parseInt(value))} value={czkAmount} />
                     </FormField>
@@ -44,7 +43,6 @@ const CurrencyExchangeForm: React.FC<CurrencyExchangeTableProps> = ({exchangeRes
                     <Box direction="row" gap="medium">
                         <Button primary label="Calculate" onClick={calculateConversion} />
                     </Box>
-                </Form>
             </Box>
         </Box>
     )

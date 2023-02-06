@@ -23,7 +23,7 @@ const CurrencyExchangePage: React.FC = () => {
                     onClose={() => {}}
                 />
             )}
-            <PageHeader title="CNB Currency Converter" />
+            <PageHeader title="CZK Currency Exchange" />
             <Card cardProps={ {margin: {bottom: "large"} } }>
                 {exchangeResponse &&
                 <Box>
